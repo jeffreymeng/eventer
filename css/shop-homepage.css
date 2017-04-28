@@ -23,7 +23,9 @@ body {
 
 .caption {
     height: 130px;
-    overflow: hidden;
+    overflow:scroll;
+    overflow-wrap: normal;
+
 }
 
 .caption h4 {
