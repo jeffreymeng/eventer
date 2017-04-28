@@ -177,8 +177,25 @@
                     values.push(snapshot.val()[key]);
                 }
             }
+            // bug testing
+            values = [{
+                "date": "June 13,2017",
+                "dateinfo": {
+                    "ampm": "A.M.",
+                    "day": "13",
+                    "hour": "6",
+                    "minute": "45",
+                    "month": "June",
+                    "monthnum": "6",
+                    "year": "2017"
+                },
+                "description": "Join us for this fun hackathon at Barnett!",
+                "link": "/e/dja7s/Barnett-Hackathon",
+                "name": "Barnett Hackathon",
+                "time": "6:45 A.M."
+            }];
             console.log(values);
-                /* var userList = */
+            /* var userList = */
             new List("events", options, values);
             $("#events-loading").addClass("hidden");
         });
