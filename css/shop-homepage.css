@@ -23,8 +23,7 @@ body {
 
 .caption {
     height: 130px;
-    /* overflow:hidden; */
-    overflow-wrap:normal;
+    overflow:hidden;
 
 }
 
