@@ -170,8 +170,14 @@
 
             };
             //these starter values must be used without firebase for listjs to work
-            var values = snapshot.val(); // firebase snapshot data
-            console.log(values)
+
+            var values = []; // firebase snapshot data
+            for (var key in snapshot.val()) {
+                if (snapshot.val().hasOwnProperty(key)) {
+                    values.push(snapshot.val()[key]);
+                }
+            }
+            console.log(values);
                 /* var userList = */
             new List("events", options, values);
             $("#events-loading").addClass("hidden");
