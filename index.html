@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Jeffrey Meng">
+    <link rel="shortcut icon" href="https://eventer.jeffkmeng.com/favicon.ico" />
 
     <title>Eventer - Home</title>
 
@@ -16,8 +17,8 @@
 
     <!-- Custom CSS -->
     <link href="/css/shop-homepage.css" rel="stylesheet">
-<link href="/css/techedit.css" rel="stylesheet">
-    
+    <link href="/css/techedit.css" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -82,10 +83,12 @@
     <div class="container">
 
         <div class="row">
-           
+
             <div class="col-md-12">
-                
-<div id="events"><p id="events-loading">Loading...</p></div>
+
+                <div id="events">
+                    <p id="events-loading">Loading...</p>
+                </div>
 
 
 
@@ -135,7 +138,7 @@
     </script>
     <script src="/js/eventer.js"></script>
     <script>
-       /* global List */
+        /* global List */
         firebase.database().ref('/e/').once('value').then(function(snapshot) {
             var options = {
                 valueNames: [
@@ -167,9 +170,10 @@
 
             };
             //these starter values must be used without firebase for listjs to work
-            var values = snapshot.val; // firebase snapshot data
+            var values = snapshot.val(); // firebase snapshot data
 
-            var userList = new List("events", options, values);
+            /* var userList = */
+            new List("events", options, values);
             $("#events-loading").addClass("hidden");
         });
     </script>
