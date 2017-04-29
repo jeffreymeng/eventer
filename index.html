@@ -102,22 +102,7 @@
                     </div>
                     <div class="list">
                         <p id="events-loading">Loading...</p>
-                        <!--
-                        <div class="col-sm-4 col-lg-4 col-md-4" data-id="ID">
-                            <div class="thumbnail event-box">
-                                <!--<img src="http://placehold.it/320x150" alt="">-->
-                        <!--
-                                <div class="caption">
-                                    <h4 class="text-center name"><a href="LINK">NAME</a>
-                                    </h4>
-                                    <p class="event-description description">DESCRIPTION.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="event-time pull-right time">TIME</p>
-                                    <p class="event-date date">DATE</p>
-                                </div>
-                            </div>
-                        </div>-->
+
                     </div>
                 </div>
 
@@ -169,7 +154,7 @@
     </script>
     <script src="/js/eventer.js"></script>
     <script>
-        /* global List */
+        /* global List $ firebase*/
         firebase.database().ref('/e/').once('value').then(function(snapshot) {
             var options = {
                 valueNames: [
@@ -208,24 +193,7 @@
                     values.push(snapshot.val()[key]);
                 }
             }
-            // bug testing
-            values = [{
-                "id": "-dja7s",
-                "date": "June 13,2017",
-                "dateinfo": {
-                    "ampm": "A.M.",
-                    "day": "13",
-                    "hour": "6",
-                    "minute": "45",
-                    "month": "June",
-                    "monthnum": "6",
-                    "year": "2017"
-                },
-                "description": "Join us for this fun hackathon at Barnett!",
-                "link": "/e/dja7s/Barnett-Hackathon",
-                "name": "Barnett Hackathon",
-                "time": "6:45 A.M."
-            }];
+            
             console.log(values);
             /* var userList = */
             new List("events", options, values);
