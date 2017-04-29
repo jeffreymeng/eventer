@@ -188,9 +188,11 @@
             //these starter values must be used without firebase for listjs to work
 
             var values = []; // firebase snapshot data
-            for (var key in snapshot.val()) {
-                if (snapshot.val().hasOwnProperty(key)) {
-                    values.push(snapshot.val()[key]);
+            var firebasedata = snapshot.val();
+            for (var key in firebasedata) {
+                if (firebasedata.hasOwnProperty(key)) {
+                    firebasedata[key].id = key;
+                    values.push(firebasedata[key]);
                 }
             }
             
