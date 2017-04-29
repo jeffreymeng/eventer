@@ -87,20 +87,28 @@
             <div class="col-md-12">
 
                 <div id="events">
-                    <p id="events-loading">Loading...</p>
-                    <div class="col-sm-4 col-lg-4 col-md-4" data-id="ID">
-                    <div class="thumbnail event-box">
-                    <!--<img src="http://placehold.it/320x150" alt="">-->
-                    <div class="caption">
-                    <h4 class="text-center name"><a href="LINK">NAME</a>
-                    </h4>
-                    <p class="event-description description">DESCRIPTION.</p>
-                    </div>
-                    <div class="ratings">
-                    <p class="event-time pull-right time">TIME</p>
-                    <p class="event-date date">DATE</p>
-                    </div>
-                    </div>
+                    <input class="form-control fuzzy-search" id="search">
+                    <button class="sort" data-sort="name">Sort by Name</button>
+                    <button class="sort" data-sort="date">Sort by Date</button>
+                    <button class="sort" data-sort="time">Sort by Time</button>
+                    <div class="list">
+                        <p id="events-loading">Loading...</p>
+                        <!--
+                        <div class="col-sm-4 col-lg-4 col-md-4" data-id="ID">
+                            <div class="thumbnail event-box">
+                                <!--<img src="http://placehold.it/320x150" alt="">-->
+                        <!--
+                                <div class="caption">
+                                    <h4 class="text-center name"><a href="LINK">NAME</a>
+                                    </h4>
+                                    <p class="event-description description">DESCRIPTION.</p>
+                                </div>
+                                <div class="ratings">
+                                    <p class="event-time pull-right time">TIME</p>
+                                    <p class="event-date date">DATE</p>
+                                </div>
+                            </div>
+                        </div>-->
                     </div>
                 </div>
 
@@ -166,7 +174,7 @@
                         name: 'link'
                     },
 
-                ]/*,
+                ],
                 item: '<div class="col-sm-4 col-lg-4 col-md-4" data-id="ID">' +
                     '<div class="thumbnail event-box">' +
                     //'<!--<img src="http://placehold.it/320x150" alt="">-->' +
@@ -181,7 +189,7 @@
                     '</div>' +
                     '</div>' +
                     '</div>'
-*/
+
             };
             //these starter values must be used without firebase for listjs to work
 
@@ -193,7 +201,7 @@
             }
             // bug testing
             values = [{
-                "id":"-dja7s",
+                "id": "-dja7s",
                 "date": "June 13,2017",
                 "dateinfo": {
                     "ampm": "A.M.",
