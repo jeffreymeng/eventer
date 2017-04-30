@@ -170,11 +170,11 @@
                         data: ["id", "fulltime"]
                     }
                 ],
-                item: '<div class="col-sm-4 col-lg-4 col-md-4" data-id="ID" data-fulltime="FULLTIME">' +
+                item: '<div class="col-sm-4 col-lg-4 col-md-4" data-id="ID" data-fulltime="FULLTIME" href="">' +
                     '<div class="thumbnail event-box">' +
                     //'<!--<img src="http://placehold.it/320x150" alt="">-->' +
                     '<div class="caption">' +
-                    '<h4 class="text-center"><a href="" class="name">NAME' +
+                    '<h4 class="text-center"><a  class="name">NAME' +
                     '</a></h4>' +
                     '<p class="event-description description">DESCRIPTION.</p>' +
                     '</div>' +
@@ -198,8 +198,7 @@
             }
 
             console.log(values);
-            /* var userList = */
-            new List("events", options, values);
+            var userList = new List("events", options, values);
             $("#events-loading").addClass("hidden");
         });
     </script>
