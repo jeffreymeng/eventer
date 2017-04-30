@@ -162,14 +162,13 @@
                 valueNames: [
                     "name",
                     "date",
-                    "time",
+                    "time", {
+                        attr: 'href',
+                        name: 'link'
+                    },
                     "description", {
                         data: ["id", "fulltime"]
-                    }, {
-                        attr: "href",
-                        name: "link"
                     }
-
                 ],
                 item: '<div class="col-sm-4 col-lg-4 col-md-4" data-id="ID" data-fulltime="FULLTIME">' +
                     '<div class="thumbnail event-box">' +
